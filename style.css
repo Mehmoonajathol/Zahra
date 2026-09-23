@@ -1,0 +1,590 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, #ffd9e8, transparent 35%),
+        radial-gradient(circle at bottom right, #ddd2ff, transparent 35%),
+        linear-gradient(135deg, #fff1f7, #f5efff);
+
+    color: #5b4054;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FLOATING ELEMENTS
+========================= */
+
+.floating-elements span {
+    position: fixed;
+    bottom: -80px;
+    z-index: 0;
+    font-size: 30px;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+
+/* Different positions and speeds */
+
+.floating-elements span:nth-child(1) {
+    left: 5%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.floating-elements span:nth-child(2) {
+    left: 13%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.floating-elements span:nth-child(3) {
+    left: 22%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.floating-elements span:nth-child(4) {
+    left: 31%;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+.floating-elements span:nth-child(5) {
+    left: 42%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.floating-elements span:nth-child(6) {
+    left: 52%;
+    animation-duration: 8s;
+    animation-delay: 5s;
+}
+
+.floating-elements span:nth-child(7) {
+    left: 62%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+
+.floating-elements span:nth-child(8) {
+    left: 72%;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.floating-elements span:nth-child(9) {
+    left: 80%;
+    animation-duration: 9s;
+    animation-delay: 5s;
+}
+
+.floating-elements span:nth-child(10) {
+    left: 88%;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+.floating-elements span:nth-child(11) {
+    left: 95%;
+    animation-duration: 8s;
+    animation-delay: 4s;
+}
+
+.floating-elements span:nth-child(12) {
+    left: 58%;
+    animation-duration: 12s;
+    animation-delay: 6s;
+}
+
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) rotate(15deg);
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   PAGE SYSTEM
+========================= */
+
+.page {
+    min-height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.page.active {
+    display: flex;
+    animation: pageAppear 0.8s ease;
+}
+
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.birthday-box,
+.content-box,
+.memory-box,
+.letter-box {
+
+    width: 100%;
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    border: 2px solid rgba(238, 153, 190, 0.45);
+
+    border-radius: 30px;
+
+    padding: 50px 45px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(185, 118, 160, 0.18),
+        0 5px 20px rgba(185, 118, 160, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   PAGE 1
+========================= */
+
+.balloons-top {
+    font-size: 45px;
+    margin-bottom: 5px;
+    animation: balloonMove 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes balloonMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+
+.cake {
+    font-size: 75px;
+    margin: 5px 0 10px;
+}
+
+
+.small-text {
+    color: #b7799c;
+    font-size: 15px;
+}
+
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 58px;
+    color: #d45d91;
+    margin: 8px 0;
+}
+
+
+.intro {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #76586b;
+    margin: 20px auto 28px;
+    max-width: 470px;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    color: #c85b8d;
+    margin-bottom: 15px;
+}
+
+
+h3 {
+    font-family: "Playfair Display", serif;
+    color: #d1588d;
+    font-size: 25px;
+    margin: 25px 0;
+}
+
+
+.pink-line {
+    width: 80px;
+    height: 4px;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        #f3a7c5,
+        #cba7ef
+    );
+    margin: 15px auto 25px;
+}
+
+
+.page-number {
+    color: #d68aac;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+
+.mini-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.content-box p,
+.memory-box p,
+.letter-box p {
+
+    font-size: 16px;
+    line-height: 1.9;
+    color: #70596a;
+    margin-bottom: 18px;
+}
+
+
+.highlight {
+    color: #c9588c !important;
+    font-weight: 600;
+}
+
+
+.special-message {
+    background: #fff0f6;
+    border-radius: 18px;
+    padding: 18px;
+    color: #c35788 !important;
+    font-weight: 500;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        #e889b1,
+        #b99be8
+    );
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    margin-top: 12px;
+
+    box-shadow:
+        0 10px 25px rgba(204, 123, 169, 0.25);
+
+    transition: 0.3s ease;
+}
+
+
+button:hover {
+
+    transform: translateY(-4px) scale(1.02);
+
+    box-shadow:
+        0 15px 30px rgba(204, 123, 169, 0.35);
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-frame {
+
+    width: 100%;
+    max-width: 500px;
+
+    margin: 25px auto;
+
+    padding: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #f5b2ca,
+        #c9b0ed,
+        #f5b2ca
+    );
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(190, 125, 165, 0.2);
+}
+
+
+.photo-frame img {
+
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 18px;
+
+    background: #fff;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-box {
+
+    background: #fffafc;
+
+    border-color: #f0bdd2;
+
+    max-width: 720px;
+
+    position: relative;
+}
+
+
+.letter-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px dashed #edb7cd;
+
+    border-radius: 22px;
+
+    pointer-events: none;
+}
+
+
+.letter-top {
+
+    font-size: 48px;
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 5px;
+}
+
+
+.letter-box h2 {
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.letter-box p {
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.birthday-title {
+
+    font-family: "Playfair Display", serif;
+
+    color: #d25489 !important;
+
+    font-size: 22px !important;
+
+    font-weight: 600;
+}
+
+
+.signature {
+
+    font-family: "Playfair Display", serif;
+
+    color: #c85d8d !important;
+
+    font-size: 18px !important;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    position: relative;
+
+    z-index: 3;
+
+    text-align: center;
+
+    padding: 18px;
+
+    color: #b47a9b;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 25px 15px;
+    }
+
+
+    .birthday-box,
+    .content-box,
+    .memory-box,
+    .letter-box {
+
+        padding: 35px 22px;
+
+        border-radius: 24px;
+    }
+
+
+    h1 {
+        font-size: 42px;
+    }
+
+
+    h2 {
+        font-size: 29px;
+    }
+
+
+    .cake {
+        font-size: 60px;
+    }
+
+
+    .balloons-top {
+        font-size: 35px;
+    }
+
+
+    .content-box p,
+    .memory-box p,
+    .letter-box p {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .photo-frame img {
+
+        height: 280px;
+    }
+
+
+    button {
+
+        width: 100%;
+
+        padding: 14px 18px;
+    }
+
+
+    .floating-elements span {
+        font-size: 24px;
+    }
+
+}
